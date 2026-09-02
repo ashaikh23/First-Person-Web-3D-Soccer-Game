@@ -2,6 +2,8 @@
 
 > **Made by Afya Shaikh**
 
+🎮 **[Play Online Now (GitHub Pages)](https://ashaikh23.github.io/First-Person-Web-3D-Soccer-Game/)**
+
 An arcade-style First-Person 3D Soccer Game running in modern web browsers, built with **TypeScript**, **Three.js**, **Rapier3D Physics**, and procedural **Web Audio API**.
 
 ---
