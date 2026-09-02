@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GIRLS SOCCER CUP - 3D Soccer</title>
+    <link rel="stylesheet" href="./src/style.css" />
+  </head>
+  <body>
+    <!-- Start Menu Screen -->
+    <div id="start-menu">
+      <div class="cyber-badge">WOMEN'S SOCCER CUP ★ 2026</div>
+      <h1 id="game-title">GIRLS SOCCER</h1>
+      <p class="subtitle">3D WOMEN'S SOCCER MATCH</p>
+
+      <div id="controls-info">
+        <h3>PLAYER CONTROLS</h3>
+        <p><span>WASD</span> Move & Sprint with <span>SHIFT</span></p>
+        <p><span>LMB / SPACE</span> Hold to Power Shot / Release to Kick</p>
+        <p><span>RMB / E</span> Direct Pass to Teammate</p>
+        <p><span>C</span> Slide Tackle / Steal Ball</p>
+        <p><span>N</span> Toggle Radar Minimap</p>
+        <p><span>DRIBBLE</span> Run directly into the Soccer Ball</p>
+        <p><span>ESC</span> Pause Match & Unlock Mouse</p>
+      </div>
+
+      <div class="selection-title">SELECT MATCH MODE:</div>
+      <div id="mode-selection">
+        <button id="btn-practice" class="mode-btn">PRACTICE MODE</button>
+        <button id="btn-match" class="mode-btn">MATCH MODE</button>
+      </div>
+
+      <div id="difficulty-selection" style="display: none;">
+        <div class="selection-title">SELECT OPPONENT DIFFICULTY:</div>
+        <div id="difficulty-buttons">
+          <button class="diff-btn" data-diff="Easy">EASY</button>
+          <button class="diff-btn active" data-diff="Medium">MEDIUM</button>
+          <button class="diff-btn" data-diff="Hard">HARD</button>
+        </div>
+      </div>
+
+      <button id="btn-start" style="display: none;">KICK OFF MATCH</button>
+      <div class="author-credit">Made by Afya Shaikh</div>
+    </div>
+
+    <!-- In-Game Pause Menu -->
+    <div id="pause-menu" style="display: none;">
+      <h2>MATCH PAUSED</h2>
+      <div class="pause-buttons">
+        <button id="btn-resume" class="mode-btn active">RESUME</button>
+        <button id="btn-quit" class="mode-btn quit-btn">QUIT TO MENU</button>
+      </div>
+    </div>
+
+    <!-- Full-Time Match Results Modal -->
+    <div id="results-modal" style="display: none;">
+      <div class="cyber-badge">MATCH FINISHED</div>
+      <h2 id="results-title">VICTORY! PINK FC WINS!</h2>
+      <div id="results-scoreboard">
+        <span id="res-score-pink">0</span> - <span id="res-score-violet">0</span>
+      </div>
+      <div id="results-stats">
+        <div class="stat-row">
+          <span>Possession</span>
+          <span id="stat-possession">50% - 50%</span>
+        </div>
+        <div class="stat-row">
+          <span>Shots (On Target)</span>
+          <span id="stat-shots">0 (0)</span>
+        </div>
+        <div class="stat-row">
+          <span>Passes Completed</span>
+          <span id="stat-passes">0</span>
+        </div>
+      </div>
+      <div class="pause-buttons" style="margin-top: 20px;">
+        <button id="btn-play-again" class="mode-btn active">PLAY AGAIN</button>
+        <button id="btn-results-menu" class="mode-btn quit-btn">MAIN MENU</button>
+      </div>
+    </div>
+
+    <!-- In-Game HUD -->
+    <div id="ui-container" style="display: none;">
+      <div id="crosshair-wrapper">
+        <div id="crosshair">✦</div>
+        <svg id="power-ring" width="56" height="56" viewBox="0 0 56 56">
+          <circle cx="28" cy="28" r="22" class="power-ring-bg" />
+          <circle id="power-ring-fill" cx="28" cy="28" r="22" />
+        </svg>
+      </div>
+      <div id="goal-banner" style="display: none;">GOAL!</div>
+
+      <!-- Top Match Scoreboard -->
+      <div id="scoreboard">
+        <div class="team blue-team">PINK FC <span id="score">0</span></div>
+        <div class="vs-divider">:</div>
+        <div class="team red-team"><span id="enemy-score">0</span> VIOLET FC</div>
+      </div>
+
+      <!-- Right Side Minimap -->
+      <div id="minimap-container">
+        <div id="minimap-header">
+          <span class="minimap-label">RADAR [N]</span>
+          <button id="btn-toggle-minimap" title="Toggle Minimap">−</button>
+        </div>
+        <canvas id="minimap" width="130" height="200"></canvas>
+      </div>
+
+      <div id="hud-info">
+        <div id="timer">00:00</div>
+        <div id="mode">Mode: Practice</div>
+      </div>
+
+      <!-- Stamina Bar -->
+      <div id="stamina-wrapper">
+        <div class="stamina-label">STAMINA</div>
+        <div id="stamina-container">
+          <div id="stamina-bar"></div>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
